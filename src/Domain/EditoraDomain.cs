@@ -35,7 +35,12 @@ namespace cadastro_livros.Domain
 
         public ReadEditoraDto BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            var editora = _context.Editoras.FirstOrDefault(editora => editora.Id == id);
+
+            ReadEditoraDto editoraDto = _mapper.Map<ReadEditoraDto>(editora);
+
+            return editoraDto;
+
         }
 
         public IEnumerable<ReadEditoraDto> BuscarTodos()
@@ -50,14 +55,37 @@ namespace cadastro_livros.Domain
 
         }
 
-        public ReadEditoraDto Editar(int id, AddEditoraDto obj)
+        public ReadEditoraDto Editar(int id, UpdateEditoraDto dto)
         {
-            throw new NotImplementedException();
+            var editora = _context.Editoras.FirstOrDefault(editora => editora.Id == id);
+
+            if (editora != null)
+            {
+                _mapper.Map(dto, editora);
+                _context.SaveChanges();
+
+                ReadEditoraDto editoraDto = _mapper.Map<ReadEditoraDto>(editora);
+
+                return editoraDto;
+            }
+
+            return null;
         }
 
         public bool Excluir(int id)
         {
-            throw new NotImplementedException();
+            var editora = _context.Editoras.FirstOrDefault(editora => editora.Id == id);
+
+            if (editora != null)
+            {
+
+                _context.Editoras.Remove(editora);
+                _context.SaveChanges();
+
+                return true;
+            }
+
+            return false;
         }
     }
 }

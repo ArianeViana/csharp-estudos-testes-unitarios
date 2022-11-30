@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace cadastrolivros.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreation : Migration
+    public partial class InitialCreations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -45,40 +45,40 @@ namespace cadastrolivros.Migrations
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     titulo = table.Column<string>(type: "text", nullable: false),
-                    autorid = table.Column<int>(name: "autor_id", type: "integer", nullable: false),
+                    AutorId = table.Column<int>(type: "integer", nullable: false),
                     isbn13 = table.Column<string>(name: "isbn-13", type: "text", nullable: false),
                     isbn10 = table.Column<string>(name: "isbn-10", type: "text", nullable: false),
                     numeropaginas = table.Column<int>(name: "numero_paginas", type: "integer", nullable: false),
                     anolancamento = table.Column<string>(name: "ano_lancamento", type: "text", nullable: false),
                     idioma = table.Column<string>(type: "text", nullable: false),
-                    editoraid = table.Column<int>(name: "editora_id", type: "integer", nullable: false)
+                    EditoraId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_livros", x => x.id);
                     table.ForeignKey(
-                        name: "FK_livros_autores_autor_id",
-                        column: x => x.autorid,
+                        name: "FK_livros_autores_AutorId",
+                        column: x => x.AutorId,
                         principalTable: "autores",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_livros_editoras_editora_id",
-                        column: x => x.editoraid,
+                        name: "FK_livros_editoras_EditoraId",
+                        column: x => x.EditoraId,
                         principalTable: "editoras",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_livros_autor_id",
+                name: "IX_livros_AutorId",
                 table: "livros",
-                column: "autor_id");
+                column: "AutorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_livros_editora_id",
+                name: "IX_livros_EditoraId",
                 table: "livros",
-                column: "editora_id");
+                column: "EditoraId");
         }
 
         /// <inheritdoc />

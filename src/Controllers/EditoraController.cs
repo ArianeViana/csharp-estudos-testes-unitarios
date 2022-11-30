@@ -56,7 +56,50 @@ namespace cadastro_livros.Controllers
                 return Ok(editoras);
             }
 
-            return NotFound("Editoras não encontradas");
+            return NotFound("Editoras não encontradas.");
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(int id)
+        {
+            var editora = _interfaces.BuscarPorId(id);
+
+            if (editora != null)
+            {
+                return Ok(editora);
+            }
+
+            return NotFound("Editora não encontrada.");
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(int id, UpdateEditoraDto dto)
+        {
+
+            var editora = _interfaces.Editar(id, dto);
+
+            if (editora != null)
+            {
+                return Ok("Editora atualizada com sucesso.");
+            }
+
+            return BadRequest("Falha ao atualizar Editora.");
+
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+
+            var editora = _interfaces.Excluir(id);
+
+            if (editora == true)
+            {
+                return Ok("Editora deletada com sucesso.");
+            }
+
+            return BadRequest("Falha ao deletar Editora.");
+
         }
     }
 }

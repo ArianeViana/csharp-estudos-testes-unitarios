@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projetos\\cadastro-livros\\src\\cadastro-livros.csproj": {}
+    "c:\\Projetos\\csharp-estudos-testes-unitarios\\src\\cadastro-livros.csproj": {}
   },
   "projects": {
-    "c:\\Projetos\\cadastro-livros\\src\\cadastro-livros.csproj": {
+    "c:\\Projetos\\csharp-estudos-testes-unitarios\\src\\cadastro-livros.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projetos\\cadastro-livros\\src\\cadastro-livros.csproj",
+        "projectUniqueName": "c:\\Projetos\\csharp-estudos-testes-unitarios\\src\\cadastro-livros.csproj",
         "projectName": "cadastro-livros",
-        "projectPath": "c:\\Projetos\\cadastro-livros\\src\\cadastro-livros.csproj",
+        "projectPath": "c:\\Projetos\\csharp-estudos-testes-unitarios\\src\\cadastro-livros.csproj",
         "packagesPath": "C:\\Users\\arianeviana.dsn.pack\\.nuget\\packages\\",
-        "outputPath": "c:\\Projetos\\cadastro-livros\\src\\obj\\",
+        "outputPath": "c:\\Projetos\\csharp-estudos-testes-unitarios\\src\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\arianeviana.dsn.pack\\AppData\\Roaming\\NuGet\\NuGet.Config"

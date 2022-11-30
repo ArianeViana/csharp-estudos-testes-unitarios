@@ -1,9 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 namespace cadastro_livros.Models.Dtos.Livro
 {
-    public class ReadLivroDto
+    public class UpdateLivroDto
     {
-        public int Id { get; set; }
-
         public string Titulo { get; set; }
 
         public int AutorId { get; set; }
@@ -19,6 +22,5 @@ namespace cadastro_livros.Models.Dtos.Livro
         public string Idioma { get; set; }
 
         public int EditoraId { get; set; }
-
     }
 }

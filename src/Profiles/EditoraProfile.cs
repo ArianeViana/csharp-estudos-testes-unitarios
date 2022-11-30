@@ -11,6 +11,8 @@ namespace cadastro_livros.Profiles
         {
             CreateMap<AddEditoraDto, Editora>();
             CreateMap<Editora, ReadEditoraDto>();
+            CreateMap<UpdateEditoraDto, Editora>();
+
         }
     }
 }

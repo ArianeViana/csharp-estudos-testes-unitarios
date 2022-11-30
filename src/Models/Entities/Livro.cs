@@ -20,8 +20,6 @@ namespace cadastro_livros.Models.Entities
         [JsonIgnore]
         public virtual Autor Autor { get; set; }
 
-        [Required]
-        [Column("autor_id")]
         [JsonIgnore]
         public int AutorId { get; set; }
 
@@ -49,8 +47,7 @@ namespace cadastro_livros.Models.Entities
         [JsonIgnore]
         public virtual Editora Editora { get; set; }
 
-        [Required]
-        [Column("editora_id")]
+        [JsonIgnore]
         public int EditoraId { get; set; }
 
 

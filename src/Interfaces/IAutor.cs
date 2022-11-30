@@ -7,7 +7,7 @@ using FluentResults;
 
 namespace cadastro_livros.Interfaces
 {
-    public interface IAutor : IBase<AddAutorDto, ReadAutorDto>
+    public interface IAutor : IBase<AddAutorDto, ReadAutorDto>, IUpdate<UpdateAutorDto, ReadAutorDto>
     {
 
     }

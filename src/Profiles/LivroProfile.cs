@@ -10,6 +10,8 @@ namespace cadastro_livros.Profiles
         {
             CreateMap<AddLivroDto, Livro>();
             CreateMap<Livro, ReadLivroDto>();
+            CreateMap<UpdateLivroDto, Livro>();
+
         }
     }
 }

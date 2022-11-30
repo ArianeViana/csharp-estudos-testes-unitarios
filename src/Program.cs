@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IEditora, EditoraDomain>();
 builder.Services.AddScoped<IAutor, AutorDomain>();
 builder.Services.AddScoped<ILivro, LivroDomain>();
+builder.Services.AddScoped<IAutorException, AutorException>();
 builder.Services.AddScoped<IEditoraException, EditoraException>(); //open space usa transient
 
 //DbContext

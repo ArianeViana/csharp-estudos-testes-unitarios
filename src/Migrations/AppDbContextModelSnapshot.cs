@@ -82,12 +82,10 @@ namespace cadastrolivros.Migrations
                         .HasColumnName("ano_lancamento");
 
                     b.Property<int>("AutorId")
-                        .HasColumnType("integer")
-                        .HasColumnName("autor_id");
+                        .HasColumnType("integer");
 
                     b.Property<int>("EditoraId")
-                        .HasColumnType("integer")
-                        .HasColumnName("editora_id");
+                        .HasColumnType("integer");
 
                     b.Property<string>("Idioma")
                         .IsRequired()

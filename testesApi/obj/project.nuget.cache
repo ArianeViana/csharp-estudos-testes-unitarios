@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Tps9lDY0kabsQQzekoWwbrngPaNWWl7Golz/I7Ta3s80qk8EWuqk6KwbhRoOsoe1etE1Mn9cjbMuyCVhBd+VFA==",
+  "dgSpecHash": "I9byHfHzd5EVPkqdY/twTTcwZLSCxxt4daTZ0ooVzJujIICT7qaPpkUCUhTpWRSH4ERCGwyQ+oa51+JFQ7riLA==",
   "success": true,
-  "projectFilePath": "c:\\Projetos\\cadastro-livros\\testesApi\\testesApi.csproj",
+  "projectFilePath": "c:\\Projetos\\csharp-estudos-testes-unitarios\\testesApi\\testesApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arianeviana.dsn.pack\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\arianeviana.dsn.pack\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

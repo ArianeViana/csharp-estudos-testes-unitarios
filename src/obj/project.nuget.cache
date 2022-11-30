@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8DWHGLwgCC7QXlF+IyP0/MiN0Ov6rvPdrTXs+0FGhN5nIuMwHagYSeGr6D7wvkM5Mh/JB03MOO0ptMBxCUe5uQ==",
+  "dgSpecHash": "5/wEF5esqgbAJbA4W/62TqNcXm+7BXTO3YgqEYX0LRPaC4+IyXBnyzcpiOsefVYbgJzIC+hqjn2t4EKAGuPgcA==",
   "success": true,
-  "projectFilePath": "c:\\Projetos\\cadastro-livros\\src\\cadastro-livros.csproj",
+  "projectFilePath": "c:\\Projetos\\csharp-estudos-testes-unitarios\\src\\cadastro-livros.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arianeviana.dsn.pack\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\arianeviana.dsn.pack\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

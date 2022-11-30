@@ -11,8 +11,8 @@ using cadastro_livros.Data;
 namespace cadastrolivros.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221123114021_InitialCreation")]
-    partial class InitialCreation
+    [Migration("20221129173845_InitialCreations")]
+    partial class InitialCreations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,12 +85,10 @@ namespace cadastrolivros.Migrations
                         .HasColumnName("ano_lancamento");
 
                     b.Property<int>("AutorId")
-                        .HasColumnType("integer")
-                        .HasColumnName("autor_id");
+                        .HasColumnType("integer");
 
                     b.Property<int>("EditoraId")
-                        .HasColumnType("integer")
-                        .HasColumnName("editora_id");
+                        .HasColumnType("integer");
 
                     b.Property<string>("Idioma")
                         .IsRequired()

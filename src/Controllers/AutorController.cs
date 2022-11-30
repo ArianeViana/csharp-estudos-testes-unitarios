@@ -55,7 +55,50 @@ namespace cadastro_livros.Controllers
                 return Ok(autores);
             }
 
-            return NotFound("Autores não encontrados");
+            return NotFound("Autores não encontrados.");
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(int id)
+        {
+            var autor = _interfaces.BuscarPorId(id);
+
+            if (autor != null)
+            {
+                return Ok(autor);
+            }
+
+            return NotFound("Autor não encontrado.");
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(int id, UpdateAutorDto dto)
+        {
+
+            var autor = _interfaces.Editar(id, dto);
+
+            if (autor != null)
+            {
+                return Ok("Autor atualizado com sucesso.");
+            }
+
+            return BadRequest("Falha ao atualizar Autor.");
+
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+
+            var autorDeletado = _interfaces.Excluir(id);
+
+            if (autorDeletado == true)
+            {
+                return Ok("Autor deletado com sucesso.");
+            }
+
+            return BadRequest("Falha ao deletar Autor.");
+
         }
 
     }

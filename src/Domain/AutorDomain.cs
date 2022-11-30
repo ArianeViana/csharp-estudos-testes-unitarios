@@ -56,17 +56,16 @@ namespace cadastro_livros.Domain
 
         }
 
-        public ReadAutorDto Editar(int id, AddAutorDto dto)
+        public ReadAutorDto Editar(int id, UpdateAutorDto dto)
         {
             var autorBuscado = _context.Autores.FirstOrDefault(autor => autor.Id == id);
 
             if (autorBuscado != null)
             {
                 _mapper.Map(dto, autorBuscado);
+                _context.SaveChanges();
 
                 ReadAutorDto autorDto = _mapper.Map<ReadAutorDto>(autorBuscado);
-
-                _context.SaveChanges();
 
                 return autorDto;
             }

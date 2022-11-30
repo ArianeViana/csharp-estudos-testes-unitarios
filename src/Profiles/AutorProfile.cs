@@ -14,6 +14,7 @@ namespace cadastro_livros.Profiles
         {
             CreateMap<AddAutorDto, Autor>();
             CreateMap<Autor, ReadAutorDto>();
+            CreateMap<UpdateAutorDto, Autor>();
         }
 
     }
