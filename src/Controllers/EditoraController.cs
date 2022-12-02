@@ -72,6 +72,19 @@ namespace cadastro_livros.Controllers
             return NotFound("Editora não encontrada.");
         }
 
+        [HttpGet("buscarPorNome/{nomeEditora}")]
+        public IActionResult BuscarPorNome(string nomeEditora)
+        {
+            var editoras = _interfaces.BuscarPorNomeEditora(nomeEditora);
+
+            if (editoras != null)
+            {
+                return Ok(editoras);
+            }
+
+            return NotFound("Editora não encontrada.");
+        }
+
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, UpdateEditoraDto dto)
         {

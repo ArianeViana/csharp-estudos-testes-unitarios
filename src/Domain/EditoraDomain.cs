@@ -40,7 +40,6 @@ namespace cadastro_livros.Domain
             ReadEditoraDto editoraDto = _mapper.Map<ReadEditoraDto>(editora);
 
             return editoraDto;
-
         }
 
         public IEnumerable<ReadEditoraDto> BuscarTodos()
@@ -51,8 +50,15 @@ namespace cadastro_livros.Domain
             IEnumerable<ReadEditoraDto> editorasDto = _mapper.Map<List<ReadEditoraDto>>(editoras);
 
             return editorasDto;
+        }
 
+        public IEnumerable<ReadEditoraDto> BuscarPorNomeEditora(string nomeEditora)
+        {
+            var editoras = _context.Editoras.Where(editora => editora.Nome.Contains(nomeEditora)).ToList();
 
+            IEnumerable<ReadEditoraDto> editorasDto = _mapper.Map<List<ReadEditoraDto>>(editoras);
+
+            return editorasDto;
         }
 
         public ReadEditoraDto Editar(int id, UpdateEditoraDto dto)

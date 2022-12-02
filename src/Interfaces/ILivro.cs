@@ -5,6 +5,7 @@ namespace cadastro_livros.Interfaces
 {
     public interface ILivro : IBase<AddLivroDto, ReadLivroDto>, IUpdate<UpdateLivroDto, ReadLivroDto>
     {
+        IEnumerable<ReadLivroDto> BuscarPorTituloLivro(string tituloLivro);
 
     }
 }

@@ -12,6 +12,7 @@ builder.Services.AddScoped<IAutor, AutorDomain>();
 builder.Services.AddScoped<ILivro, LivroDomain>();
 builder.Services.AddScoped<IAutorException, AutorException>();
 builder.Services.AddScoped<IEditoraException, EditoraException>(); //open space usa transient
+builder.Services.AddScoped<ILivroException, LivroException>(); //open space usa transient
 
 //DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>

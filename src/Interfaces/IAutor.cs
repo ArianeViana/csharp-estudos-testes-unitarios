@@ -9,6 +9,6 @@ namespace cadastro_livros.Interfaces
 {
     public interface IAutor : IBase<AddAutorDto, ReadAutorDto>, IUpdate<UpdateAutorDto, ReadAutorDto>
     {
-
+        IEnumerable<ReadAutorDto> BuscarPorNomeAutor(string nomeAutor);
     }
 }

@@ -46,14 +46,20 @@ namespace cadastro_livros.Domain
 
         public IEnumerable<ReadAutorDto> BuscarTodos()
         {
-
             var autores = _context.Autores.ToList();
 
             IEnumerable<ReadAutorDto> autoresDto = _mapper.Map<List<ReadAutorDto>>(autores);
 
             return autoresDto;
+        }
 
+        public IEnumerable<ReadAutorDto> BuscarPorNomeAutor(string nomeAutor)
+        {
+            var autores = _context.Autores.Where(autor => autor.Nome.Contains(nomeAutor)).ToList();
 
+            IEnumerable<ReadAutorDto> autoresDto = _mapper.Map<List<ReadAutorDto>>(autores);
+
+            return autoresDto;
         }
 
         public ReadAutorDto Editar(int id, UpdateAutorDto dto)
@@ -86,7 +92,6 @@ namespace cadastro_livros.Domain
             }
 
             return false;
-
         }
     }
 }

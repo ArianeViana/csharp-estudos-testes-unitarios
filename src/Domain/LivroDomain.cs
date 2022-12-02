@@ -50,6 +50,15 @@ namespace cadastro_livros.Domain
             return livrosDto;
         }
 
+        public IEnumerable<ReadLivroDto> BuscarPorTituloLivro(string tituloLivro)
+        {
+            var livros = _context.Livros.Where(livro => livro.Titulo.Contains(tituloLivro)).ToList();
+
+            IEnumerable<ReadLivroDto> livrosDto = _mapper.Map<List<ReadLivroDto>>(livros);
+
+            return livrosDto;
+        }
+
         public ReadLivroDto Editar(int id, UpdateLivroDto dto)
         {
             var livro = _context.Livros.FirstOrDefault(livro => livro.Id == id);

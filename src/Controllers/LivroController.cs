@@ -1,5 +1,7 @@
+using cadastro_livros.Exceptions.Interfaces;
 using cadastro_livros.Interfaces;
 using cadastro_livros.Models.Dtos.Livro;
+using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cadastro_livros.Controllers
@@ -10,14 +12,29 @@ namespace cadastro_livros.Controllers
     {
         private readonly ILivro _interfaces;
 
-        public LivroController(ILivro interfaces)
+        private readonly ILivroException _exceptions;
+
+        public LivroController(ILivro interfaces, ILivroException exceptions)
         {
             _interfaces = interfaces;
+            _exceptions = exceptions;
+        }
+
+        public static IEnumerable<String> messageException(Result resultado)
+        {
+            return resultado.Reasons.Select(reason => reason.Message);
         }
 
         [HttpPost]
         public IActionResult Post([FromBody] AddLivroDto dto)
         {
+            Result livroJaCadastrado = _exceptions.LivroJaCadastrado(dto.Isbn13);
+
+            if (livroJaCadastrado.IsFailed)
+            {
+                return BadRequest(messageException(livroJaCadastrado));
+            }
+
             var livro = _interfaces.Adicionar(dto);
 
             if (livro != null)
@@ -49,6 +66,19 @@ namespace cadastro_livros.Controllers
             if (livro != null)
             {
                 return Ok(livro);
+            }
+
+            return NotFound("Livro não encontrado.");
+        }
+
+        [HttpGet("buscarPorTitulo/{tituloLivro}")]
+        public IActionResult BuscarPorTitulo(string tituloLivro)
+        {
+            var livros = _interfaces.BuscarPorTituloLivro(tituloLivro);
+
+            if (livros != null)
+            {
+                return Ok(livros);
             }
 
             return NotFound("Livro não encontrado.");

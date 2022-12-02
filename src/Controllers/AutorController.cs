@@ -1,6 +1,7 @@
 using cadastro_livros.Exceptions.Interfaces;
 using cadastro_livros.Interfaces;
 using cadastro_livros.Models.Dtos.Autor;
+using cadastro_livros.Models.Entities;
 using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -66,6 +67,19 @@ namespace cadastro_livros.Controllers
             if (autor != null)
             {
                 return Ok(autor);
+            }
+
+            return NotFound("Autor não encontrado.");
+        }
+
+        [HttpGet("buscarPorNome/{nomeAutor}")]
+        public IActionResult BuscarPorNome(string nomeAutor)
+        {
+            var autores = _interfaces.BuscarPorNomeAutor(nomeAutor);
+
+            if (autores != null)
+            {
+                return Ok(autores);
             }
 
             return NotFound("Autor não encontrado.");
