@@ -74,11 +74,24 @@ namespace cadastro_livros.Controllers
         [HttpGet("buscarPorTitulo/{tituloLivro}")]
         public IActionResult BuscarPorTitulo(string tituloLivro)
         {
-            var livros = _interfaces.BuscarPorTituloLivro(tituloLivro);
+            var livros = _interfaces.BuscarPorNome(tituloLivro);
 
             if (livros != null)
             {
                 return Ok(livros);
+            }
+
+            return NotFound("Livro não encontrado.");
+        }
+
+        [HttpGet("buscarPorIsbn/{isbn}")]
+        public IActionResult BuscarPorIsbn(string isbn)
+        {
+            var livro = _interfaces.BuscarPorIsbn(isbn);
+
+            if (livro != null)
+            {
+                return Ok(livro);
             }
 
             return NotFound("Livro não encontrado.");

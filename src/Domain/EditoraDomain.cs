@@ -52,7 +52,7 @@ namespace cadastro_livros.Domain
             return editorasDto;
         }
 
-        public IEnumerable<ReadEditoraDto> BuscarPorNomeEditora(string nomeEditora)
+        public IEnumerable<ReadEditoraDto> BuscarPorNome(string nomeEditora)
         {
             var editoras = _context.Editoras.Where(editora => editora.Nome.Contains(nomeEditora)).ToList();
 

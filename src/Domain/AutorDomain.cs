@@ -53,7 +53,7 @@ namespace cadastro_livros.Domain
             return autoresDto;
         }
 
-        public IEnumerable<ReadAutorDto> BuscarPorNomeAutor(string nomeAutor)
+        public IEnumerable<ReadAutorDto> BuscarPorNome(string nomeAutor)
         {
             var autores = _context.Autores.Where(autor => autor.Nome.Contains(nomeAutor)).ToList();
 

@@ -17,6 +17,9 @@ builder.Services.AddScoped<ILivroException, LivroException>(); //open space usa 
 //DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
+    //Na classe Autor temos uma lista de Livros. 
+    //Sem o UseLazyLoadingProxies() essa lista retorna nula mesmo existindo livros cadastrados.
+
     options.UseLazyLoadingProxies().UseNpgsql(builder.Configuration.GetConnectionString("Default"),
     assembly => assembly.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName));
 });

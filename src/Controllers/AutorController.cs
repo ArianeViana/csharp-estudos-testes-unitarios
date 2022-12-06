@@ -75,7 +75,7 @@ namespace cadastro_livros.Controllers
         [HttpGet("buscarPorNome/{nomeAutor}")]
         public IActionResult BuscarPorNome(string nomeAutor)
         {
-            var autores = _interfaces.BuscarPorNomeAutor(nomeAutor);
+            var autores = _interfaces.BuscarPorNome(nomeAutor);
 
             if (autores != null)
             {

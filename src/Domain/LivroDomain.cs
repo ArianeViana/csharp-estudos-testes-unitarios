@@ -50,7 +50,7 @@ namespace cadastro_livros.Domain
             return livrosDto;
         }
 
-        public IEnumerable<ReadLivroDto> BuscarPorTituloLivro(string tituloLivro)
+        public IEnumerable<ReadLivroDto> BuscarPorNome(string tituloLivro)
         {
             var livros = _context.Livros.Where(livro => livro.Titulo.Contains(tituloLivro)).ToList();
 
@@ -92,5 +92,26 @@ namespace cadastro_livros.Domain
             return false;
 
         }
+
+        public ReadLivroDto BuscarPorIsbn(string isbn)
+        {
+            var livro13 = _context.Livros.FirstOrDefault(livro => livro.Isbn13 == isbn);
+
+            if (livro13 != null)
+            {
+                ReadLivroDto livroDto13 = _mapper.Map<ReadLivroDto>(livro13);
+
+                return livroDto13;
+            }
+
+            var livro10 = _context.Livros.FirstOrDefault(livro => livro.Isbn10 == isbn);
+
+            ReadLivroDto livroDto10 = _mapper.Map<ReadLivroDto>(livro10);
+
+            return livroDto10;
+
+        }
+
+
     }
 }
